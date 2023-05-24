@@ -4,6 +4,7 @@ go 1.18
 
 require (
 	github.com/mitchellh/mapstructure v1.5.0
+	github.com/wms3001/goCommon v1.0.2
 	github.com/wms3001/goTool v1.0.1
 	github.com/wms3001/http v1.0.1
 )
