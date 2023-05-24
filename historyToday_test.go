@@ -2,7 +2,7 @@ package historyToday
 
 import (
 	"encoding/json"
-	"fmt"
+	"log"
 	"testing"
 )
 
@@ -11,9 +11,8 @@ func TestHistoryTody_GetHistoryTodayByMoth(t *testing.T) {
 	historyToday.Type = "month"
 	historyToday.Month = "09"
 	resp := historyToday.GetHistoryToday()
-	fmt.Println(resp)
-	var monthEvent MonthEvent
-	json.Unmarshal([]byte(resp.Data), &monthEvent)
+	re, _ := json.Marshal(resp)
+	log.Println(string(re))
 }
 
 func TestHistoryTody_GetHistoryTodayByDay(t *testing.T) {
@@ -22,6 +21,7 @@ func TestHistoryTody_GetHistoryTodayByDay(t *testing.T) {
 	historyToday.Month = "09"
 	historyToday.Day = "28"
 	resp := historyToday.GetHistoryDay()
-	fmt.Println(resp)
+	re, _ := json.Marshal(resp)
+	log.Println(string(re))
 
 }
