@@ -18,8 +18,8 @@ func TestHistoryTody_GetHistoryTodayByMoth(t *testing.T) {
 func TestHistoryTody_GetHistoryTodayByDay(t *testing.T) {
 	historyToday := &HistoryTody{}
 	historyToday.Type = "day"
-	historyToday.Month = "09"
-	historyToday.Day = "28"
+	historyToday.Month = "06"
+	historyToday.Day = "02"
 	resp := historyToday.GetHistoryDay()
 	re, _ := json.Marshal(resp)
 	log.Println(string(re))

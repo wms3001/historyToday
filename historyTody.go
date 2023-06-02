@@ -69,6 +69,9 @@ func (historyTody *HistoryTody) GetHistoryToday() MonthHistory {
 
 func (historyTody *HistoryTody) GetHistoryDay() DayHistory {
 	var dayHistory DayHistory
+	if len(historyTody.Day) < 2 {
+		historyTody.Day = "0" + historyTody.Day
+	}
 	resp := historyTody.GetHistoryToday()
 	for _, v := range resp.DayHistories {
 		if v.Day == historyTody.Month+historyTody.Day {
